@@ -1,5 +1,6 @@
 import numpy as np
 
+
 # activation functions
 def _sigmoid(x, derivative = False):
     if derivative: # d/dx[σ(x)] = σ(x) ⋅ (1 − σ(x))
@@ -18,10 +19,10 @@ def _tanh(x, derivative = False):
     return np.tanh(x)
 
 
-#e error/loss function
-def _mean_squared_error(x, y): #better for regression
+# error/loss function
+def _mean_squared_error(x, y):
     return np.mean((x - y) ** 2)
 
 def _cross_entropy_loss(x, y):
-    x = np.clip(x, 1e-12, 1.0) # safety in case x = 0 
+    x = np.clip(x, 1e-12, 1.0) #safety in case x = 0 
     return -np.mean(np.sum(y * np.log(x), axis=0))
