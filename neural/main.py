@@ -93,6 +93,6 @@ class Neural:
         console.print(f'[bold]Test Accuracy:[/bold] [steel_blue]{count}/{i + 1} = [uu]{count/(i + 1): .2%}[/uu][/steel_blue]')
         console.print(f'\nAccuracy: {count/(i + 1): .2%} | Epochs: {self.epochs} | Learning Rate: {self.learn_rate} | Hidden Layer: {self.input_hidden.out_nodes} nodes')
         
-net = Neural(epochs=1, learn_rate=0.018, nodes=[784, 30, 10], dataset_path='./dataset/mnist.npz')
+net = Neural(epochs=10, learn_rate=0.018, nodes=[784, 40, 10], dataset_path='./dataset/mnist.npz')
 net.train()
 net.test()
